@@ -44,4 +44,4 @@ def play():
         return render_template("result.html",count=count,original_words=original_words,inputed=inputed)
 
 
-app.run(debug=True)
+app.run(debug=True) #automatically updates when saves
