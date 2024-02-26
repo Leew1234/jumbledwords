@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import pymongo
 import random
 import os
-app=Flask("Jumbled_Words")
+app=Flask(__name__)
 app_path=os.path.join(os.path.dirname(__file__),".")
 dotenv_path=os.path.join(app_path,".env")
 load_dotenv(dotenv_path)
@@ -43,5 +43,5 @@ def play():
                 count=count+1
         return render_template("result.html",count=count,original_words=original_words,inputed=inputed)
 
-
-app.run(debug=True) #automatically updates when saves
+if __name__=="__main__":
+    app.run(debug=True) #automatically updates when saves
